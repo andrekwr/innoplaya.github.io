@@ -12,5 +12,6 @@ app.use(temp)
 app.use(oldTemplate)
 app.use(newTemplate)
 
-app.listen(3002)
-console.log("running 3002")
+app.listen(process.env.PORT || 3000, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  });
